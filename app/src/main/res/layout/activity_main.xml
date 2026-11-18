@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_surface"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- App Title Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_app"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/subtitle_app"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Hero Card (Daily Total Banner) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_hero_card"
+                android:padding="24dp">
+
+                <!-- Decorative Cute Glass Icon Circle -->
+                <ImageView
+                    android:id="@+id/ivHeroIcon"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="#33FFFFFF"
+                    android:contentDescription="@string/cd_wallet"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_wallet_hero" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/ivHeroIcon"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_total_today"
+                        android:textColor="#FFF0F4"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/default_total"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Form Card (Inputs & Actions) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/stroke_color"
+            app:strokeWidth="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/title_form"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Amount Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/hint_amount"
+                    app:boxBackgroundColor="@color/input_bg"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxStrokeColor="@color/primary_pastel"
+                    app:boxStrokeWidth="1.5dp"
+                    app:helperText="@string/helper_amount"
+                    app:helperTextTextColor="@color/text_muted"
+                    app:startIconDrawable="@drawable/ic_money"
+                    app:startIconTint="@color/primary_pastel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Note Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="@string/hint_note"
+                    app:boxBackgroundColor="@color/input_bg"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxStrokeColor="@color/primary_pastel"
+                    app:boxStrokeWidth="1.5dp"
+                    app:helperText="@string/helper_note"
+                    app:helperTextTextColor="@color/text_muted"
+                    app:startIconDrawable="@drawable/ic_note"
+                    app:startIconTint="@color/primary_pastel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnClear"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/btn_clear"
+                        android:textColor="@color/btn_clear_text"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="20dp"
+                        app:icon="@drawable/ic_clear"
+                        app:iconTint="@color/btn_clear_text"
+                        app:strokeColor="@color/stroke_color"
+                        app:strokeWidth="1.5dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAdd"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/primary_pastel"
+                        android:text="@string/btn_add"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="20dp"
+                        app:elevation="3dp"
+                        app:icon="@drawable/ic_add"
+                        app:iconTint="@color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Recent Activity Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/stroke_color"
+            app:strokeWidth="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:text="@string/title_recent"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/ic_heart"
+                    app:drawableTint="@color/primary_pastel" />
+
+                <TextView
+                    android:id="@+id/tvLatest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/summary_bg"
+                    android:padding="16dp"
+                    android:text="@string/default_recent"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

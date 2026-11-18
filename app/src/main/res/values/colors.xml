@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Kawaii Baew / Cute Strawberry Milk Palette -->
+    <color name="bg_surface">#FFF4F6</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <color name="text_primary">#4A353A</color>
+    <color name="text_secondary">#8C7379</color>
+    <color name="text_muted">#BCA4AA</color>
+
+    <color name="primary_pastel">#FF5A8D</color>
+    <color name="primary_pastel_dark">#E63973</color>
+    <color name="primary_pastel_light">#FFEAF0</color>
+
+    <color name="btn_clear_text">#FF5A8D</color>
+    <color name="btn_clear_bg">#FFF0F4</color>
+
+    <color name="stroke_color">#FFC2D1</color>
+    <color name="input_bg">#FFF8FA</color>
+    <color name="summary_bg">#FFF0F4</color>
+</resources>
